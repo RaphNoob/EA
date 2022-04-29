@@ -1,0 +1,160 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/.css')}}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="topnav">
+	<h1>港聞</h1>
+	    <a class = "active" href="All.html">全部</a>
+		<a href="SocialNews.html">社會新聞</a>
+		<a href="BreakingNews.html">突發</a>
+</div>
+
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="/static/image/1.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="/static/image/2.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="/static/image/-3.jpg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+<div class="">
+<p>社會新聞</p>
+<table>
+  <tr>
+    <td>
+    <a href="https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/764696/%E7%96%AB%E6%83%85-%E6%9C%80%E6%96%B0-%E6%B6%88%E6%81%AF-%E4%B8%8B%E6%9C%88%E8%B5%B7%E6%9C%AC%E5%9C%B0%E5%AE%A2%E6%A9%9F%E6%A9%9F%E7%B5%84%E4%BA%BA%E5%93%A1%E9%85%92%E5%BA%97%E6%AA%A2%E7%96%AB%E6%B8%9B%E8%87%B33%E6%97%A5">
+    <img src="https://cdn.hk01.com/di/media/images/dw/20220429/596621431740043264106539.jpeg/40sGG-NmwZ-xvi7abtQEAHGIKZaQKhGR0E7xGtBO8Ro?v=w1920r16_9" width= "30%" height = "30%">
+    </a>
+    <p>疫情・最新｜消息：下月起本地客機機組人員酒店檢疫減至3日</p></td>
+    <td><a href="https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/765127/%E5%BC%B7%E5%88%B6%E6%AA%A2%E6%B8%AC-%E5%A4%A9%E6%B0%B4%E5%9C%8D%E5%98%89%E6%B9%96%E5%B1%B1%E8%8E%8A%E7%BA%8C%E6%9C%89%E5%85%A9%E5%BA%A7%E4%B8%8A%E6%A6%9C-%E8%91%B5%E6%B6%8C%E9%87%8D%E7%81%BD%E4%BD%94%E5%A4%9A%E9%81%947%E5%B9%A2">
+    <img src="https://cdn.hk01.com/di/media/images/dw/20220429/596836609874202624365827.jpeg/dVV3TqwMA1be_erh-zFvTg98-hWZeq_RPpLGpj6SxqY?v=w1920r16_9"  >
+    </a>
+    <p>強制檢測｜天水圍嘉湖山莊續有兩座上榜　葵涌重災佔多達7幢</p></td>
+</tr>
+</table>
+</div>
+
+
+{% endblock %}
